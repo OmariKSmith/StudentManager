@@ -19,7 +19,15 @@ import javax.sql.DataSource;
 @ComponentScan( basePackages = "com.studentmanagement")
 public class AppConfig implements WebMvcConfigurer {
 
+    @Bean
+    public InternalResourceViewResolver viewResolver(){
 
+        InternalResourceViewResolver viewResolver
+                =new InternalResourceViewResolver();
+        viewResolver.setPrefix("WEB-INF/view/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
 
 
 }
